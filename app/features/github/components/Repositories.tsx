@@ -12,6 +12,7 @@ export interface RepositoriesProps {
 }
 
 export function Repositories({ repos, user }: RepositoriesProps) {
+  console.log(repos, user);
   return (
     <Layout user={user} repos={repos}>
       <div className="bg-white lg:min-w-0 lg:flex-1">

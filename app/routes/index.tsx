@@ -1,3 +1,3 @@
 import { LoaderFunction, redirect } from "remix";
 
-export const loader: LoaderFunction = () => redirect(`/admin/courses`);
+export const loader: LoaderFunction = () => redirect(`/github/raphaelcunha`);
