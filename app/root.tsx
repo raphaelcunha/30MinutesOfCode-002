@@ -8,19 +8,18 @@ import {
   ScrollRestoration,
   useCatch,
 } from "remix";
+import { AppProvider } from "~/containers";
 
-import styles from "./tailwind.css";
-
-export function links() {
-  return [{ rel: "stylesheet", href: styles }];
-}
+export function links() {}
 
 // https://remix.run/api/conventions#default-export
 // https://remix.run/api/conventions#route-filenames
 export default function App() {
   return (
     <Document>
-      <Outlet />
+      <AppProvider>
+        <Outlet />
+      </AppProvider>
     </Document>
   );
 }
@@ -34,7 +33,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
         <h1>There was an error</h1>
         <p>{error.message}</p>
         <hr />
-        <p>jhdjksahdkjahdkjahdjkahdjksahjk</p>
+        <p>Document Error</p>
         <p>
           Hey, developer, you should replace this with what you want your users
           to see.

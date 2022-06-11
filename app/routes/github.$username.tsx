@@ -6,8 +6,6 @@ export const loader: LoaderFunction = async ({ params }) => {
     user: await GithubApi.getUser(params.username),
     repos: await GithubApi.getUserRepos(params.username),
   };
-
-  console.log("222222", teste);
   return teste;
 };
 
@@ -17,6 +15,5 @@ export function ErrorBoundary() {
 
 export default function () {
   const { user, repos } = useLoaderData<Types.Repositories.LoaderData>();
-  console.log("111111", { user, repos });
   return <Repositories user={user} repos={repos} />;
 }
